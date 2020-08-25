@@ -1,10 +1,7 @@
 package com.example.demo01.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author dplStart
@@ -19,6 +16,12 @@ public class OderController {
     @GetMapping
     public String queryAllOrder(){
         return "success";
+    }
+
+    @ResponseBody
+    @GetMapping("query/{id}")
+    public String queryOrderById(@PathVariable("id") String id){
+        return "success" + id;
     }
 
 }
