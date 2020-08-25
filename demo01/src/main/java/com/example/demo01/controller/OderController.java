@@ -21,6 +21,7 @@ public class OderController {
     @ResponseBody
     @GetMapping("query/{id}")
     public String queryOrderById(@PathVariable("id") String id){
+        System.out.println("第一组修改");
         return "success" + id;
     }
 
